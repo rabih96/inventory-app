@@ -1,0 +1,7 @@
+<h1>Edit Warehouse</h1>
+<%= simple_form_for @warehouse do |f| %>
+  <%= f.input :name, placeholder: 'Warehouse Name', required: true %>
+  <%= f.input :location, placeholder: 'Warehouse Location', required: true %>
+  <%= link_to "Cancel", warehouses_path %>
+  <%= f.submit %>
+<% end %>

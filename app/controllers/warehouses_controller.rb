@@ -17,9 +17,31 @@ class WarehousesController < ApplicationController
     @warehouse.destroy
   end
 
+  def update
+    if @warehouse.update(warehouse_params)
+      redirect_to warehouses_path
+    else
+      render :edit
+    end
+  end
+
+  def create
+    @warehouse = Warehouse.new(warehouse_params)
+    if @warehouse.save!
+      @warehouse.save
+      redirect_to warehouses_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def set_warehouse
     @warehouse = Warehouse.find(params[:id])
+  end
+
+  def warehouse_params
+    params.require(:warehouse).permit(:name, :location)
   end
 end

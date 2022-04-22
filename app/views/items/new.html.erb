@@ -1,0 +1,6 @@
+<h1>Add New Item</h1>
+<%= simple_form_for @item do |f| %>
+  <%= f.input :name, placeholder: 'Item Name', required: true %>
+  <%= link_to "Cancel", items_path %>
+  <%= f.submit %>
+<% end %>
