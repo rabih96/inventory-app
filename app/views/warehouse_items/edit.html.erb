@@ -1,0 +1,8 @@
+<h3>Edit quantity for warehouse <%= @warehouse.name %>:</h3>
+<%= simple_form_for [@warehouse, @warehouse_item] do |f| %>
+  <%= f.input :quantity, placeholder: 'Item quantity', required: true %>
+  <%= f.hidden_field :item, value: @warehouse_item.item.id %>
+  <%= f.hidden_field :warehouse, value: @warehouse.id %>
+  <%= f.submit %>
+<% end %>
+<br>

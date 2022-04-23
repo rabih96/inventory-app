@@ -5,7 +5,11 @@ class WarehousesController < ApplicationController
     @warehouses = Warehouse.all
   end
 
-  def show; end
+  def show
+    @warehouse_items = WarehouseItem.where(warehouse: @warehouse)
+    @warehouse_item = WarehouseItem.new
+    @items = Item.where.not(id: @warehouse.items.pluck(:id))
+  end
 
   def edit; end
 
@@ -15,6 +19,7 @@ class WarehousesController < ApplicationController
 
   def destroy
     @warehouse.destroy
+    redirect_to warehouses_path
   end
 
   def update
