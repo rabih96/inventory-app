@@ -9,13 +9,13 @@
       <%= link_to 'Edit', edit_warehouse_warehouse_item_path(@warehouse, warehouse_item) %> -
       <%= link_to 'Delete', warehouse_warehouse_item_path(@warehouse, warehouse_item), data: {
                     turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
+                    turbo_confirm: "Remove #{warehouse_item.item.name} from #{@warehouse.name}?"
                   } %>
     </li>
   <% end %>
 </ul>
 
-<h3>Add new Item:</h3>
+<h3>Add an Item to this warehouse:</h3>
 <%= simple_form_for [@warehouse, @warehouse_item] do |f| %>
   <%= f.input :item,  as: :select, collection: @items, prompt: 'Select Item', required: true %>
   <%= f.input :quantity, placeholder: 'Item quantity', required: true %>

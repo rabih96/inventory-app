@@ -7,7 +7,7 @@
       <%= link_to 'Edit', edit_warehouse_path(warehouse) %> -
       <%= link_to 'Delete', warehouse_path(warehouse), data: {
                     turbo_method: :delete,
-                    turbo_confirm:  "Are you sure?"
+                    turbo_confirm: "Remove #{warehouse.name} and all its items?"
                   } %>
     </li>
   <% end %>

@@ -2,7 +2,10 @@
 <h3>Located in warehouse(s):</h3>
 <ul>
   <% @warehouse_items.each do |warehouse_item| %>
-    <li>Warehouse: <%= warehouse_item.warehouse.name %> - Quantity: <%= warehouse_item.quantity %></li>
+    <li>
+      <%= link_to warehouse_item.warehouse.name, warehouse_path(warehouse_item.warehouse) %> -
+      quantity: <%= warehouse_item.quantity %>
+    </li>
   <% end %>
 </ul>
 <br>
