@@ -5,7 +5,9 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def show; end
+  def show
+    @warehouse_items = WarehouseItem.where(item: @item)
+  end
 
   def edit; end
 

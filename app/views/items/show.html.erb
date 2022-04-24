@@ -1,0 +1,9 @@
+<h1><%= @item.name %></h1>
+<h3>Located in warehouse(s):</h3>
+<ul>
+  <% @warehouse_items.each do |warehouse_item| %>
+    <li>Warehouse: <%= warehouse_item.warehouse.name %> - Quantity: <%= warehouse_item.quantity %></li>
+  <% end %>
+</ul>
+<br>
+<%= link_to 'Back', items_path %>

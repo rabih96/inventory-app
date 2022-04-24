@@ -10,7 +10,7 @@ class WarehouseItemsController < ApplicationController
       @warehouse_item.save
       redirect_to warehouse_path(warehouse)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class WarehouseItemsController < ApplicationController
     if @warehouse_item.update(item: item, warehouse: warehouse, quantity: quantity)
       redirect_to warehouse_path(warehouse)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
