@@ -33,8 +33,6 @@ warehouse_items = [
   [item_names[6], locations[1], rand(1...50)]
 ]
 
-pp warehouse_items
-
 warehouse_items.each do |warehouse_item|
   item = Item.find_by(name: warehouse_item[0].capitalize)
   warehouse = Warehouse.find_by(location: warehouse_item[1])
