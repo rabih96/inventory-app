@@ -1,11 +1,31 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  quantity: 1
+  quantity: 10
   item: one
   warehouse: one
 
 two:
-  quantity: 1
+  quantity: 20
+  item: three
+  warehouse: one
+
+three:
+  quantity: 15
+  item: five
+  warehouse: one
+
+four:
+  quantity: 30
   item: two
+  warehouse: two
+
+five:
+  quantity: 20
+  item: three
+  warehouse: two
+
+six:
+  quantity: 10
+  item: four
   warehouse: two
