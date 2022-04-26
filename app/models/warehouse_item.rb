@@ -3,6 +3,7 @@ class WarehouseItem < ApplicationRecord
   belongs_to :warehouse
 
   validates :item, :warehouse, presence: true
+  validates :item, uniqueness: { scope: :warehouse }
   validates :quantity, presence: true, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 0,
